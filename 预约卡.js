@@ -44,9 +44,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var cameraBtn = document.getElementById('cameraBtn');
-    if (cameraBtn) {
-        cameraBtn.addEventListener('click', function() {
-            screenshotAndDownload();
-        });
-    }
+    // 移除截图按钮相关代码
 });
