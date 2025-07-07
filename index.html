@@ -30,6 +30,49 @@
             <img src="logo1.jpg" class="warp-logo" alt="logo1" />
         </div>
     </div>
+    <button id="cameraBtn" style="position: absolute; left: 50px; bottom: 40px; z-index: 1000; background: rgba(34,34,34,0.7); border: none; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <svg width="32" height="32" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="28" fill="#222" fill-opacity="0.7"/>
+            <rect x="16" y="22" width="24" height="16" rx="4" fill="#FFD700"/>
+            <rect x="22" y="18" width="12" height="8" rx="2" fill="#FFD700"/>
+            <circle cx="28" cy="30" r="5" fill="#222"/>
+        </svg>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="预约卡.js"></script>
+</body>
+</html> <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>预约卡</title>
+    <link rel="stylesheet" href="预约卡.css">
+</head>
+<body>
+    <div class="warp">
+        <div class="warp-checkbox">
+            <input type="checkbox" id="topCheck"><label for="topCheck">预约信息</label>
+        </div>
+        <div class="card">
+            <div class="card-glow-border" id="cardGlowBorder">
+                <svg class="glow-svg" width="100%" height="100%" viewBox="0 0 608 408" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="600" height="400" rx="16" stroke="#FFD700" stroke-width="4" fill="none"/>
+                    <rect class="glow-rect" x="4" y="4" width="600" height="400" rx="16" stroke="#FFD700" stroke-width="6" fill="none"/>
+                </svg>
+            </div>
+            <h1>VIP会员<span class="status">未认证</span></h1>
+            <div class="form-frame">
+                <div class="info-row"><span class="label">持卡人</span><span class="divider"></span><input class="input" type="text" placeholder="输入账号"></div>
+                <div class="info-row"><span class="label">会员年龄</span><span class="divider"></span><input class="input" type="text" placeholder="输入年龄"></div>
+                <div class="info-row"><span class="label">预约单号</span><span class="divider"></span><input class="input" type="text" placeholder="输入单号"></div>
+                <div class="info-row"><span class="label">预约地址</span><span class="divider"></span><input class="input" type="text" placeholder="输入地址"></div>
+            </div>
+        </div>
+        <div class="warp-logos">
+            <img src="logo2.jpg" class="warp-logo" alt="logo2" />
+            <img src="logo1.jpg" class="warp-logo" alt="logo1" />
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="预约卡.js"></script>
 </body>
