@@ -15,15 +15,13 @@ function setCardBorderGlow(on) {
 }
 setGlow(true);
 setCardBorderGlow(true);
-document.getElementById('cameraLogo').onclick = function() {
+
+function screenshotAndDownload() {
     var warp = document.querySelector('.warp');
-    var logo = document.getElementById('cameraLogo');
     setGlow(false);
     setCardBorderGlow(false);
-    logo.style.display = 'none';
     setTimeout(function() {
         html2canvas(warp).then(function(canvas) {
-            logo.style.display = '';
             setGlow(true);
             setCardBorderGlow(true);
             var link = document.createElement('a');
@@ -32,4 +30,16 @@ document.getElementById('cameraLogo').onclick = function() {
             link.click();
         });
     }, 50);
-};
+}
+
+var checkbox = document.getElementById('topCheck');
+checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+        screenshotAndDownload();
+    }
+});
+
+var cameraBtn = document.getElementById('cameraBtn');
+cameraBtn.addEventListener('click', function() {
+    screenshotAndDownload();
+});
