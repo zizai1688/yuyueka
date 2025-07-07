@@ -13,33 +13,40 @@ function setCardBorderGlow(on) {
     var border = document.getElementById('cardGlowBorder');
     if (border) border.classList.toggle('hide', !on);
 }
-setGlow(true);
-setCardBorderGlow(true);
 
-function screenshotAndDownload() {
-    var warp = document.querySelector('.warp');
-    setGlow(false);
-    setCardBorderGlow(false);
-    setTimeout(function() {
-        html2canvas(warp).then(function(canvas) {
-            setGlow(true);
-            setCardBorderGlow(true);
-            var link = document.createElement('a');
-            link.download = 'warp_screenshot.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        });
-    }, 50);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    setGlow(true);
+    setCardBorderGlow(true);
 
-var checkbox = document.getElementById('topCheck');
-checkbox.addEventListener('change', function() {
-    if (checkbox.checked) {
-        screenshotAndDownload();
+    function screenshotAndDownload() {
+        var warp = document.querySelector('.warp');
+        setGlow(false);
+        setCardBorderGlow(false);
+        setTimeout(function() {
+            html2canvas(warp).then(function(canvas) {
+                setGlow(true);
+                setCardBorderGlow(true);
+                var link = document.createElement('a');
+                link.download = 'warp_screenshot.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }, 50);
     }
-});
 
-var cameraBtn = document.getElementById('cameraBtn');
-cameraBtn.addEventListener('click', function() {
-    screenshotAndDownload();
+    var checkbox = document.getElementById('topCheck');
+    if (checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+                screenshotAndDownload();
+            }
+        });
+    }
+
+    var cameraBtn = document.getElementById('cameraBtn');
+    if (cameraBtn) {
+        cameraBtn.addEventListener('click', function() {
+            screenshotAndDownload();
+        });
+    }
 });
